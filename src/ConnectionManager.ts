@@ -127,7 +127,7 @@ export class ConnectionManager {
 
     sendCommand(doricoCommand: string): Promise<boolean> {
         doricoCommand = doricoCommand.trim();
-        if (this.state !== "connected" && doricoCommand.length === 0)
+        if (this.state !== "connected" || doricoCommand.length === 0)
             return Promise.resolve(false);
 
         return new Promise<boolean>((resolve) => {
