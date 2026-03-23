@@ -127,7 +127,6 @@ export class ConnectionManager {
 
     sendCommand(doricoCommand: string): Promise<boolean> {
         doricoCommand = doricoCommand.trim();
-        streamDeck.logger.info(doricoCommand);
         if (this.state !== "connected" && doricoCommand.length === 0)
             return Promise.resolve(false);
 

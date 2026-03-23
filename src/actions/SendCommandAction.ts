@@ -22,7 +22,6 @@ export class SendCommandAction extends SingletonAction<ButtonSettings> {
             await ev.action.showAlert();
         else {
             const ok = await this.conn.sendCommand(ev.payload.settings.command);
-            streamDeck.logger.info("down: ", ok);
             if (!ok)
                 ev.action.showAlert();
         }
