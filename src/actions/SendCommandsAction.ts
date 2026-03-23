@@ -1,13 +1,13 @@
 import streamDeck, { Action, action, type KeyDownEvent, type DidReceiveSettingsEvent, type WillAppearEvent, SingletonAction } from "@elgato/streamdeck";
 import type { ConnectionManager } from "../ConnectionManager";
 
-export const COMMAND_ACTION_UUID = "com.mgieseking.doremotedeck.commands";
+export const COMMANDS_ACTION_UUID = "com.mgieseking.doremotedeck.commands";
 
 type ButtonSettings = {
     commands?: string;
 };
 
-@action({ UUID: COMMAND_ACTION_UUID })
+@action({ UUID: COMMANDS_ACTION_UUID })
 export class SendCommandsAction extends SingletonAction<ButtonSettings> {
     constructor(private readonly conn: ConnectionManager) { super(); }
 
