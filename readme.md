@@ -61,8 +61,6 @@ the [Stream Deck SDK](https://docs.elgato.com/streamdeck/sdk/introduction/gettin
 
 ## Build Instructions
 - Clone this repository.
-- Download the latest pre-built `doremote.dll` from [here](https://github.com/mgieseki/doremote) and copy it
-to directory `doremote-deck/native`.
 - Install the dependencies and build the plugin:
     ```cmd
     cd doremotedeck-ts
