@@ -16,7 +16,7 @@ conn.onStateChange((state) => {
     streamDeck.settings.setGlobalSettings(conn.getGlobalSettings());
 });
 
-streamDeck.logger.setLevel("trace");
+streamDeck.logger.setLevel("error");
 streamDeck.actions.registerAction(new ConnectAction(conn));
 streamDeck.actions.registerAction(new SendCommandAction(conn));
 streamDeck.actions.registerAction(new SendCommandsAction(conn));
