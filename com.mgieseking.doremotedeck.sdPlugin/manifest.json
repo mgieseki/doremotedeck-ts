@@ -1,0 +1,76 @@
+{
+  "Name": "Dorico Remote Deck",
+  "Version": "0.1.0.0",
+  "Author": "Martin Gieseking",
+  "Actions": [
+    {
+      "UUID": "com.mgieseking.doremotedeck.connect",
+      "Name": "Connect to Dorico",
+      "Tooltip": "Establish connection to Dorico",
+      "Icon": "imgs/actions/connect",
+      "PropertyInspectorPath": "ui/connect.html",
+      "States": [
+        {
+          "Image": "imgs/actions/empty",
+          "Title": "Connect",
+          "TitleAlignment": "middle"
+        },
+        {
+          "Image": "imgs/actions/empty",
+          "Title": "Disconnect",
+          "TitleAlignment": "middle"
+        }
+      ]
+    },
+    {
+      "UUID": "com.mgieseking.doremotedeck.command",
+      "Name": "Send Command",
+      "Tooltip": "Send a command to Dorico",
+      "Icon": "imgs/actions/send-command",
+      "PropertyInspectorPath": "ui/send-command.html",
+      "SupportedInMultiActions": true,
+      "States": [
+        {
+          "Image": "imgs/actions/empty",
+          "Title": "Send\nCommand",
+          "TitleAlignment": "middle"
+        }
+      ]
+    },
+    {
+      "UUID": "com.mgieseking.doremotedeck.commands",
+      "Name": "Send Multiple Commands",
+      "Tooltip": "Send a sequence of commands to Dorico",
+      "Icon": "imgs/actions/send-commands",
+      "PropertyInspectorPath": "ui/send-commands.html",
+      "SupportedInMultiActions": true,
+      "States": [
+        {
+          "Image": "imgs/actions/empty",
+          "Title": "Send\nCommand\nSequence",
+          "TitleAlignment": "middle"
+        }
+      ]
+    }
+  ],
+  "Category": "Dorico Remote Deck",
+  "CategoryIcon": "imgs/plugin/category-icon",
+  "CodePath": "bin/plugin.js",
+  "Description": "Send commands to Dorico",
+  "Icon": "imgs/plugin/marketplace",
+  "SDKVersion": 3,
+  "Software": {
+    "MinimumVersion": "6.9"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Nodejs": {
+    "Version": "20",
+    "Debug": "--inspect=127.0.0.1:12345"
+  },
+  "UUID": "com.mgieseking.doremotedeck"
+}
