@@ -20,7 +20,11 @@ export class SendCommandAction extends SingletonAction<ButtonSettings> {
     override async onKeyDown(ev: KeyDownEvent<ButtonSettings>): Promise<void> {
         if (!ev.payload.settings.command?.length || this.conn.getState() !== "connected")
             await ev.action.showAlert();
-        else
-            this.conn.sendCommand(ev.payload.settings.command);
+        else {
+            const ok = await this.conn.sendCommand(ev.payload.settings.command);
+            streamDeck.logger.info("down: ", ok);
+            if (!ok)
+                ev.action.showAlert();
+        }
     }
 }

@@ -16,14 +16,18 @@ export class SendCommandsAction extends SingletonAction<ButtonSettings> {
     }
 
     override async onKeyDown(ev: KeyDownEvent<ButtonSettings>): Promise<void> {
-        if (!ev.payload.settings.commands?.length || this.conn.getState() !== "connected") {
+        if (!ev.payload.settings.commands?.length || this.conn.getState() !== "connected")
             await ev.action.showAlert();
-        }
         else {
             var cmdString = ev.payload.settings.commands.split("\n").join(";").replaceAll(/\s+/g, "");
             var commands = cmdString.split(";").filter(entry => entry);
-            for (var cmd of commands)
-                this.conn.sendCommand(cmd.trim());
+            for (var cmd of commands) {
+                const ok = await this.conn.sendCommand(cmd.trim());
+                if (!ok) {
+                    ev.action.showAlert();
+                    break;
+                }
+            }
         }
     }
 }

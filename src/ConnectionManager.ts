@@ -23,6 +23,7 @@ export class ConnectionManager {
     private doricoVersion : string = "";
     private doricoTerminated = false;
     private autoConnecting = false;
+    private pendingCommands: Array<(success: boolean) => void> = [];
 
     constructor() {
         this.loadGlobalSettings();
@@ -67,6 +68,9 @@ export class ConnectionManager {
         };
 
         ws.onclose = async (ev: WebSocket.CloseEvent) => {
+            for (const resolve of this.pendingCommands)
+                resolve(false);
+            this.pendingCommands = [];
             if (this.state === "connected") {
                 this.doricoTerminated = true;
                 this.setState("offline");
@@ -98,6 +102,8 @@ export class ConnectionManager {
                         }));
                         this.setState("connected");
                     }
+                    else if (this.parseResponse.length > 0)
+                        this.pendingCommands.shift()?.(msg.code == "kOK");
                     break;
                 case "version":
                     this.doricoVersion = msg.variant + " " + msg.number;
@@ -119,14 +125,19 @@ export class ConnectionManager {
         this.ws?.close();
     }
 
-    sendCommand(doricoCommand: string) {
+    sendCommand(doricoCommand: string): Promise<boolean> {
         doricoCommand = doricoCommand.trim();
-        if (this.state === "connected" && doricoCommand.length > 0) {
+        streamDeck.logger.info(doricoCommand);
+        if (this.state !== "connected" && doricoCommand.length === 0)
+            return Promise.resolve(false);
+
+        return new Promise<boolean>((resolve) => {
+            this.pendingCommands.push(resolve);
             this.ws?.send(JSON.stringify({
                 message: "command",
                 command: doricoCommand
             }));
-        }
+        })
     }
 
     onStateChange(fn: (s: SessionState) => void) {
