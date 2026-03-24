@@ -57,7 +57,7 @@
   "CategoryIcon": "imgs/plugin/doremote",
   "CodePath": "bin/plugin.js",
   "Description": "Send commands to Dorico via the Remote Control API",
-  "Icon": "imgs/plugin/marketplace",
+  "Icon": "imgs/plugin/doremote-color",
   "SDKVersion": 3,
   "Software": {
     "MinimumVersion": "6.9"
