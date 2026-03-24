@@ -54,7 +54,7 @@
     }
   ],
   "Category": "Dorico Remote Deck",
-  "CategoryIcon": "imgs/plugin/category-icon",
+  "CategoryIcon": "imgs/plugin/doremote",
   "CodePath": "bin/plugin.js",
   "Description": "Send commands to Dorico",
   "Icon": "imgs/plugin/marketplace",
