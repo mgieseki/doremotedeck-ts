@@ -1,0 +1,25 @@
+{
+  "Description": "Send commands to Dorico via the Remote Control API",
+  "com.mgieseking.doremotedeck.connect": {
+      "Name": "Mit Dorico verbinden",
+      "Tooltip": "Verbindung zu Dorico herstellen/trennen"
+    },
+    "com.mgieseking.doremotedeck.command": {
+      "Name": "Befehl senden",
+      "Tooltip": "Sendet einen Befehl an Dorico",
+      "States": [
+        {
+          "Title": "Befehl\nsenden"
+        }
+      ]
+    },
+    "com.mgieseking.doremotedeck.commands": {
+      "Name": "Mehrere Befehle senden",
+      "Tooltip": "Sendet eine Folge von Befehlen an Dorico",
+      "States": [
+        {
+          "Title": "Befehle\nsenden"
+        }
+      ]
+    }
+}

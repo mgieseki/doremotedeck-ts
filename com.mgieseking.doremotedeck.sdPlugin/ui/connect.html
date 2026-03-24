@@ -4,15 +4,29 @@
     <title>Connection to Dorico</title>
     <meta charset="utf-8" />
     <script src="./sdpi-components.js"></script>
+    <script>
+      SDPIComponents.i18n.locales = {
+        en: {
+          reconnect: "Automatically reconnect to Dorico",
+          token: "Session Token",
+          connectedTo: "Connected to"
+        },
+        de: {
+          reconnect: "Automatisch wieder verbinden",
+          token: "Session-Token",
+          connectedTo: "Verbunden mit"
+        }
+      };
+    </script>
   </head>
   <body>
     <sdpi-item label="Port">
       <sdpi-textfield setting="port" pattern="^[0-9]+$" placeholder="4560" global/>
     </sdpi-item>
     <sdpi-item>
-      <sdpi-checkbox setting="autoReconnect" default="true" label="Automatically reconnect to Dorico" global/>
+      <sdpi-checkbox setting="autoReconnect" default="true" label="__MSG_reconnect__" global/>
     </sdpi-item>
-    <sdpi-item label="Session Token">
+    <sdpi-item label="__MSG_token__">
       <sdpi-textfield id="token" disabled/>
     </sdpi-item>
     <sdpi-item>
@@ -24,7 +38,7 @@
       function updateInfo(payload) {
         document.getElementById("token").value = payload.token;
         if (payload.version)
-          document.getElementById("version").innerText = "Connected to Dorico "+payload.version;
+          document.getElementById("version").innerText = SDPIComponents.i18n.getMessage('connectedTo')+" Dorico "+payload.version;
       }
 
       (async function () {

@@ -4,13 +4,27 @@
     <title>Send a command to Dorico</title>
     <meta charset="utf-8" />
     <script src="./sdpi-components.js"></script>
+    <script>
+      SDPIComponents.i18n.locales = {
+        en: {
+          commands: "Commands",
+          info: "Here you can enter a sequence of Dorico commands separated by semicolons and/or newlines."
+        },
+        de: {
+          commands: "Befehle",
+          info: "Hier können mehrere Dorico-Befehle, getrennt durch Semikolons und/oder Zeilenumbrüche, eingegeben werden."
+        }
+      };
+    </script>
   </head>
   <body>
-    <sdpi-item label="Commands">
+    <sdpi-item label="__MSG_commands__">
       <sdpi-textarea setting="commands" rows="5"/>
     </sdpi-item>
     <sdpi-item>
-        <div style="font-size:85%">Here you can enter a sequence of Dorico commands separated by semicolons and/or newlines.</div>
+        <div style="font-size:85%">
+          <script>document.write(SDPIComponents.i18n.getMessage('info'));</script>
+        </div>
     </sdpi-item>
   </body>
 </html>

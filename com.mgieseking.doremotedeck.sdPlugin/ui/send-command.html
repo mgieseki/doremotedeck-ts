@@ -4,9 +4,15 @@
     <title>Send a command to Dorico</title>
     <meta charset="utf-8" />
     <script src="./sdpi-components.js"></script>
+    <script>
+      SDPIComponents.i18n.locales = {
+        en: {command: "Command"},
+        de: {command: "Befehl"}
+      };
+    </script>
   </head>
   <body>
-    <sdpi-item label="Command">
+    <sdpi-item label="__MSG_command__">
       <sdpi-textfield setting="command"></sdpi-textfield>
     </sdpi-item>
   </body>
