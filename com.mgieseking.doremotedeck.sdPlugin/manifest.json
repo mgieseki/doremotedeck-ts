@@ -56,7 +56,7 @@
   "Category": "Dorico Remote Deck",
   "CategoryIcon": "imgs/plugin/doremote",
   "CodePath": "bin/plugin.js",
-  "Description": "Send commands to Dorico",
+  "Description": "Send commands to Dorico via the Remote Control API",
   "Icon": "imgs/plugin/marketplace",
   "SDKVersion": 3,
   "Software": {
