@@ -19,7 +19,7 @@ If the *Automatically reconnect to Dorico* option is enabled in the button prope
 attempt to reconnect in the background without requiring a button press. Once Dorico is running, the
 connection is automatically established within a few seconds.
 
-<img alt="Connect to Dorico" src="https://github.com/user-attachments/assets/31eb7200-2ca5-4bef-a0b7-87d1219fcbf9" />
+<img width="600" alt="Connect to Dorico" src="https://github.com/user-attachments/assets/31eb7200-2ca5-4bef-a0b7-87d1219fcbf9" />
 
 #### Send Command
 Sends a specific command, like `Edit.ShowAccidental`, to Dorico. To my knowledge, there is currently no
@@ -40,7 +40,7 @@ with no spaces in between. For example:
 UI.InvokePropertyChangeValue?Type=kNoteAccidentalVisibility_v3,Value=kRoundBrackets
 ```
 
-<img alt="Send Command" src="https://github.com/user-attachments/assets/534496e6-9ec8-47a5-8186-95f8f5c9eb54" />
+<img width="600" alt="Send Command" src="https://github.com/user-attachments/assets/534496e6-9ec8-47a5-8186-95f8f5c9eb54" />
 
 #### Send Multiple Commands
 Similar to the previous action, this one allows you to send a sequence of multiple commands to Dorico.
@@ -48,12 +48,14 @@ Commands are entered into the property inspector's text area and must be separat
 newlines. If Dorico returns an error for any command in the sequence, execution stops immediately, and the
 remaining commands are not sent.
 
-<img alt="Send Multiple Commands" src="https://github.com/user-attachments/assets/b33dfaa1-bab3-4c94-9d06-b2d3abc583c2" />
+<img width="600" alt="Send Multiple Commands" src="https://github.com/user-attachments/assets/b33dfaa1-bab3-4c94-9d06-b2d3abc583c2" />
 
 ## Installation
 To install the plugin, just download the latest release from [here](https://github.com/mgieseki/doremotedeck-ts/releases)
-and double-click on the file. Now the new category *Dorico Remote* or *Doremote Deck* should appear in your
-Stream Deck application.
+and double-click on the file. Now the new category *Dorico Remote Deck* and the three button actions should appear
+in your Stream Deck application.
+
+<img width="180" src="https://github.com/user-attachments/assets/f77f1ec4-c6c5-43f5-a484-72eae47bf0ae" />
 
 ## Build Requirements
 If you want to build the plugin on your own, you need to have [Node.js](https://nodejs.org) and
