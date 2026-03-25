@@ -160,7 +160,7 @@ export class ConnectionManager {
         }
     }
 
-    private waitForDorico(retryIntervalMs: number=3000, timeoutMs: number=30000): Promise<void> {
+    private waitForDorico(retryIntervalMs: number=3000, timeoutMs: number=0): Promise<void> {
         streamDeck.logger.info("waiting for Dorico");
         return new Promise((resolve, reject) => {
             const startTime = Date.now();
